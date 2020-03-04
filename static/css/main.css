@@ -527,8 +527,8 @@ body {
 }
 
 .card__picture--4 {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#5f83a3), to(#101d2c)), url("../images/marko-photo7.jpg");
-  background-image: linear-gradient(to right bottom, #5f83a3, #101d2c), url("../images/marko-photo7.jpg");
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#5f83a3), to(#101d2c)), url("../images/marko-grazing.jpg");
+  background-image: linear-gradient(to right bottom, #5f83a3, #101d2c), url("../images/marko-grazing.jpg");
 }
 
 .card__heading {
