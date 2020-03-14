@@ -10,12 +10,5 @@ document.querySelector('.check').addEventListener('click',()=>{
 document.querySelector('.background__link').addEventListener('click',()=>{
     back.classList.toggle('in');
     console.log('yam');
-    
+
 });
-
-
-
-
-
-
-

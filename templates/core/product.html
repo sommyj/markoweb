@@ -1,49 +1,51 @@
-{% extends 'core/base.html' %}
+{% extends "core/base.html" %}
 {% load static %}
 {% block content %}
-    <section class="product-header u-margin-bottom--big">
-        <div class="product-header__text-box">
-            <h1 class="product-header__text">
-                <span class="product-header__text--main">Our products</span>
-                <span class="product-header__text--sub">Lorem ipsum dolor</span>
-            </h1>
+<body>
+  <div class="navigation">
+      <div class="navigation__logo-box">
+          <a href="{% url 'core:index' %}" class="logo">
+              <h1>marko</h1>
+          </a>
+      </div>
+    <div class="background">
+        <div class="background__place-center">
+            <ul class="background__list">
+                <li class="background__item"><a href="{% url 'core:category' %}" class="background__link">Back</a></li>
+            </ul>
         </div>
+    </div>
+
+        <nav class="navigation__nav">
+            <ul class="navigation__list">
+                <li class="navigation__item"><a href="{% url 'core:category' %}" class="navigation__link">&#10094; Back</a></li>
+            </ul>
+        </nav>
 
 
+        <input type="checkbox" class="navigation__check" id="check">
+        <label for="check" class="check">
+            <nav class="navigation__ham">
+                <div class="navigation__ham--item"></div>
+                <div class="navigation__ham--item"></div>
+                <div class="navigation__ham--item"></div>
+             </nav>
+        </label>
 
+        <div class="navigation__background"></div>
+    </div>
 
-
-        <figure class="product-header__slider">
-            <div class="product-header__slider--1">1</div>
-            <div class="product-header__slider--2">2</div>
-            <div class="product-header__slider--3">3</div>
-            <div class="product-header__slider--4">4</div>
-            <div class="product-header__slider--5">5</div>
-        </figure>
+    <section class="pd">
+        <div class="pd__content">
+            <img src="{{ object.image.url }}" alt="product_image" class="pd__image">
+            <div class="pd__description">
+                <div class="pd__description__head u-margin-bottom--medium">
+                    <h3 class="pd__description__heading heading-tertiary ">{{ object.title }}</h3>
+                </div>
+                <p class="pd__description__content" >
+                  {{ object.description }}
+                </p>
+            </div>
+        </div>
     </section>
-
-
-
-    <main>
-        <section class="section">
-            <div class="u-center-text u-margin-bottom--big">
-                <h2 class="heading-secondary">
-                    here are some of our best sellers
-                </h2>
-           </div>
-
-           <div class="section__products">
-              <div class="section__products--1">
-                1
-              </div>
-
-
-              <div class="section__products--2">
-                2
-              </div>
-           </div>
-
-
-        </section>
-    </main>
 {% endblock content %}

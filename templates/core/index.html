@@ -1,7 +1,11 @@
-{% extends 'core/base.html' %}
+{% extends "core/base.html" %}
 {% load static %}
 {% block content %}
+{% include 'core/nav.html' %}
     <div class="header" id="home">
+      {% for message in messages %}
+      <h4 style="color:crimson; font-size:1.5rem;">{{ message }}</h4>
+      {% endfor %}
         <div class="header__text-box">
             <h1 class="heading-primary">
                 <span class="heading-primary--main">Marko Ventures</span>
@@ -128,12 +132,13 @@
                             </div>
 
                             <h4 class="card__heading">
-                                <span class="card__heading-span--4">Gaot Farming</span>
+                                <span class="card__heading-span--4">Goat Farming</span>
                                 </h4>
 
                             <div class="card__details">
                                <p>
-                                 Goat farming can be very suited to production with other livestock such as sheep and cattle on low-quality grazing land. Goats efficiently convert sub-quality grazing matter that is less desirable for other livestock into quality lean meat.
+                                 Goat farming can be very suited to production with other livestock such as sheep and cattle on low-quality grazing land.
+                                 Goat efficiently convert sub-quality grazing matter that is less desirable for other livestock into quality lean meat.
                               </p>
 
                             </div>
@@ -142,10 +147,15 @@
                     </div>
                  </div>
             </div>
-
+            {% if request.user.is_authenticated %}
             <div class="u-center-text ">
-                <a href="#" class="btn btn--green btn--cta btn--animated">Discover More</a>
+                <a href="{% url 'core:category' %}" class="btn btn--green btn--cta btn--animated">Discover More</a>
             </div>
+            {% else %}
+            <div class="u-center-text ">
+                <a href="{% url 'core:login' %}" class="btn btn--green btn--cta btn--animated">Discover More</a>
+            </div>
+            {% endif %}
 
         </section>
     </main>

@@ -1,12 +1,13 @@
-{% extends 'core/base.html' %}
+{% extends "core/base.html" %}
 {% load static %}
 {% block content %}
+{% include 'core/nav.html' %}
     <section class="section-book" id="section-book">
         <div class="row">
             <div class="book">
                 <div class="book__form">
                   {% for message in messages %}
-                      <p>{{ message }}</p>
+                      <h4 style="color:crimson; font-size:1.5rem;">{{ message }}</h4>
                   {% endfor %}
                   <form class="" action="{% url 'core:login' %}" method="post">
                     {% csrf_token %}
