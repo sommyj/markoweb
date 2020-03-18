@@ -14,8 +14,8 @@ import os
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
-# import django_heroku
-# import dj_database_url
+import django_heroku
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -152,7 +152,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # EMAIL_HOST_USER = 'danielonyeka247@gmail.com'
 # EMAIL_HOST_PASSWORD = 'danielsung2478?'
 
-# django_heroku.settings(locals())
+django_heroku.settings(locals())
 
 # SECURE_SSL_REDIRECT = True
 
