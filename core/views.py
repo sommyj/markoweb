@@ -1,12 +1,12 @@
 from django.shortcuts import render, redirect
 from django.views.generic import DetailView
-from django.views.generic.edit import FormView
+# from django.views.generic.edit import FormView
 from .models import Item
 from django.contrib import messages
 from django.contrib.auth.models import User, auth
 # from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .forms import CreationUserForm
+# from .forms import CreationUserForm
 
 app_name = 'core'
 
