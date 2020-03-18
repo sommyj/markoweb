@@ -21,6 +21,23 @@
           {% endif %}
         </ul>
     </nav>
+    <div class="background">
+       <div class="background__place-center">
+            <ul class="background__list">
+              {% if request.user.is_authenticated %}
+                <li class="background__item"><a href="#section-about" class="background__link">About Marko</a></li>
+                <li class="background__item"><a href="{% url 'core:contact' %}" class="background__link">Contact us</a></li>
+                <li class="background__item"><a href="{% url 'core:category' %}" class="background__link">Products</a></li>
+                <li class="background__item"><a href="{% url 'core:logout' %}" class="background__link" id="sign_up">Logout</a></li>
+                {% else %}
+                <li class="background__item"><a href="#section-about" class="background__link">About Marko</a></li>
+                <li class="background__item"><a href="{% url 'core:contact' %}" class="background__link">Contact us</a></li>
+                <li class="background__item"><a href="{% url 'core:signup' %}" class="background__link" id="sign_up">Sign up</a></li>
+                <li class="background__item"><a href="{% url 'core:login' %}" class="background__link" id="sign_up">Login</a></li>
+                {% endif %}
+            </ul>
+       </div>
+    </div>
     <input type="checkbox" class="navigation__check" id="check">
     <label for="check" class="check">
         <nav class="navigation__ham">

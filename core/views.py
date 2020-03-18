@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect
 from django.views.generic import DetailView
+from django.views.generic.edit import FormView
 from .models import Item
 from django.contrib import messages
 from django.contrib.auth.models import User, auth
 # from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from .forms import CreationUserForm
 
 app_name = 'core'
 
@@ -27,6 +29,17 @@ def category(request):
 class ItemDetailView(LoginRequiredMixin, DetailView):
     model = Item
     template_name = 'core/product.html'
+
+
+# class PasswordResetView(FormView):
+#     template_name = 'core/password_reset.html'
+#     form_class = CreationUserForm
+#
+#     def form_valid(self, form):
+#         # This method is called when valid form data has been POSTed.
+#         # It should return an HttpResponse.
+#         form.send_email()
+#         return super().form_valid(form)
 
 
 # view for contact page
@@ -79,7 +92,7 @@ def signupPage(request):
                     messages.info(request, 'Congrats!! Account created for ' + username)
                     return redirect('core:login')
             elif p1 == p2 and p1 < 8:
-                messages.info(request, 'Password is oo short. Password must be more than 8 characters.')
+                messages.info(request, 'This password is too short. It must contain at least 8 characters.')
                 return redirect('core:signup')
             else:
                 messages.info(request, 'Passwords do not match. Please input the correct passwords.')
@@ -96,3 +109,15 @@ def signupPage(request):
 def logoutPage(request):
     auth.logout(request)
     return redirect('core:login')
+
+
+# def password_reset(request):
+#     return render(request, 'core/password_reset.html')
+#
+#
+# def password_reset_done(request):
+#     return render(request, 'core/password_reset_done.html')
+#
+#
+# def password_reset_confirm(request):
+#     return render(request, 'core/password_reset_confirm.html')

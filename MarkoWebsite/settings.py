@@ -14,8 +14,8 @@ import os
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
-import django_heroku
-import dj_database_url
+# import django_heroku
+# import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -28,7 +28,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'jh8*ld%e#r+(gr5qv8ykq=^!x&-#rhmt$gc(vywxa*ca)=!^i0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['https://markoventures.com','markoweb.herokuapp.com', '127.0.0.1']
 
@@ -145,7 +145,14 @@ STATICFILES_DIRS = (
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
-django_heroku.settings(locals())
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = 'danielonyeka247@gmail.com'
+# EMAIL_HOST_PASSWORD = 'danielsung2478?'
+
+# django_heroku.settings(locals())
 
 # SECURE_SSL_REDIRECT = True
 
