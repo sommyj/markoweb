@@ -1,12 +1,9 @@
 from django.shortcuts import render, redirect
 from django.views.generic import DetailView
-# from django.views.generic.edit import FormView
 from .models import Item
 from django.contrib import messages
 from django.contrib.auth.models import User, auth
-# from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-# from .forms import CreationUserForm
 
 app_name = 'core'
 
@@ -29,17 +26,6 @@ def category(request):
 class ItemDetailView(LoginRequiredMixin, DetailView):
     model = Item
     template_name = 'core/product.html'
-
-
-# class PasswordResetView(FormView):
-#     template_name = 'core/password_reset.html'
-#     form_class = CreationUserForm
-#
-#     def form_valid(self, form):
-#         # This method is called when valid form data has been POSTed.
-#         # It should return an HttpResponse.
-#         form.send_email()
-#         return super().form_valid(form)
 
 
 # view for contact page
