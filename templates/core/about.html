@@ -1,10 +1,64 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
+{% extends 'core/base.html' %}
+{% load static %}
+{% block content %}
+{% include 'core/nav.html' %}
+    <main>
+        <section class="abt">
+            <div class="abt__header u-margin-bottom--big">
+                <div class="abt__header__text-box">
+                    <h1 class="heading-primary">
+                        <span class="heading-primary--sub">About Marko Ventures</span>
+                    </h1>
+                </div>
+            </div>
+            <div class="abt__content  u-margin-bottom--medium">
+                <div class="u-center-text u-margin-bottom--medium">
+                    <h2 class="heading-secondary">
+                        who we are
+                    </h2>
+               </div>
 
-  </body>
-</html>
+               <p>
+                 Marko-Agro Ventures is a dynamic, easy access venture borne out of the identified pronounced challenges encountered by the farmers,
+                 marketers and consumers in getting agro-produce to their final place of need.
+               </p>
+               <p>
+                 Inspired by our passion to see the agricultural revolution and food security achieved by African countries, Nigeria in particular.
+                 We have pulled together our resource to make agricultural products and services available to everyone in any corner at pocket friendly rates and in record time.
+               </p>
+               <p>
+                 Marko-Agro Venture is staffed with experts across the agricultural value chain from farmers, extention workers, logistics, agricultural engineers, agricultural economics e.t.c.
+               </p>
+            </div>
+            <div class="abt__content  u-margin-bottom--medium">
+                <div class="u-center-text u-margin-bottom--medium">
+                    <h2 class="heading-secondary">
+                        Agro Allied
+                    </h2>
+               </div>
+
+               <p>
+                 Marko-Agro Ventures also sells, supplies, distribute and offers instruction/supervision on the application of different kinds of fertilizers, crop pesticides, soil enhancing and high yielding chemicals which meets the approval and stipulated standards of FDA, NAFDAC and SON.
+               </p>
+            </div>
+            <div class="abt__content  u-margin-bottom--medium">
+                <div class="u-center-text u-margin-bottom--medium">
+                    <h2 class="heading-secondary">
+                        Consultancy
+                    </h2>
+               </div>
+
+               <p>
+                 Among Consultancy in other fields, you can consult us to setup, manage and help you maximize/optimize the capacity of your farm facilities to meet your demand.
+               </p>
+            </div>
+
+        </section>
+    </main>
+    <footer class="footer">
+        <p class="copyright">
+            &copy; Copyright 2020 by Marko-Agro-Ventures.
+        </p>
+    </footer>
+
+{% endblock content %}

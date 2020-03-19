@@ -13,6 +13,11 @@ def index(request):
     return render(request, 'core/index.html')
 
 
+# view for aboutpage
+def about(request):
+    return render(request, 'core/about.html')
+
+
 # view for product categories
 def category(request):
     context = {

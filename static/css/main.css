@@ -539,7 +539,7 @@ body {
 }
 
 .card__picture--4 {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#5f83a3), to(#101d2c)), url("../images/nat-7.jpg");
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#5f83a3), to(#101d2c)), url("../images/marko-grazing.jpg");
   background-image: linear-gradient(to right bottom, #5f83a3, #101d2c), url("../images/marko-grazing.jpg");
 }
 
@@ -1341,6 +1341,43 @@ body {
   font-size: 1.3rem;
 }
 
+.abt {
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background: #f7f7f7;
+}
+
+.abt__header {
+  position: relative;
+  background: -webkit-gradient(linear, right top, left bottom, from(#28b485), to(#55c57a));
+  background: linear-gradient(to left bottom, #28b485, #55c57a);
+  width: inherit;
+  height: 50vh;
+}
+
+.abt__header__text-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.abt__content {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.abt__content p {
+  margin: 0 auto;
+  width: 90%;
+  text-align: justify;
+  font-size: 1.5rem;
+  color: #101d2c;
+}
+
 .contact {
   height: 91vh;
   width: 100%;
@@ -1598,7 +1635,8 @@ body {
   text-transform: uppercase;
   font-family: 'Arial Narrow';
   color: #ffffff;
-  line-height: 5rem;
+  line-height: 10rem;
+  font-size: 3rem;
 }
 
 .product__heading--main {
