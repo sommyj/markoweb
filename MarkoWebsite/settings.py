@@ -41,8 +41,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'core',
     'cloudinary',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
 ]
 
 MIDDLEWARE = [
@@ -77,6 +81,20 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'MarkoWebsite.wsgi.application'
 
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+
+ACCOUNT_FORMS = {
+    'login': 'core.forms.CustomLoginForm',
+    'signup': 'core.forms.CustomSignupForm',
+    'reset_password': 'core.forms.CustomResetPasswordForm',
+    'reset_password_from_key': 'core.forms.CustomResetPasswordKeyForm',
+    'change_password': 'core.forms.CustomChangePasswordForm',
+
+}
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
@@ -143,5 +161,23 @@ STATICFILES_DIRS = (
 #  Add configuration for static files storage using whitenoise
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'danielonyeka247@gmail.com'
+EMAIL_HOST_PASSWORD = 'danielsung2478?'
+
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = 'account_login'
+
+SITE_ID = 1
+
+ACCOUNT_AUTHENTICATION_LOGIN_REDIRECTS = True
+
+# ACCOUNT_AUTHENTICATION_METHOD = 'username'
+#
+# ACCOUNT_EMAIL_REQUIRED = True
 
 django_heroku.settings(locals())

@@ -2040,4 +2040,41 @@ body {
   color: #55c57a;
   padding: 1rem 0;
 }
+.pagination_container {
+  text-align: center;
+  margin: auto;
+  padding: 2rem;
+}
+
+.pagination {
+  display: inline;
+  font-size: 1.3rem;
+}
+
+.pagination li {
+  display: inline;
+  text-decoration: none;
+  border-radius: 5px;
+  color: #101d2c;
+  cursor: pointer;
+  margin: 0 .5rem;
+}
+
+.pagination a:link, .pagination a:visited {
+  text-decoration: none;
+  padding: .8rem 1.6rem;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+}
+
+.pagination a:hover:not(.active) {
+  background: #ccc;
+}
+form#signup_form {
+    margin-top: -5rem;
+}
 /*# sourceMappingURL=main.css.map */

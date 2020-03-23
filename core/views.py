@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect
-from django.views.generic import DetailView
+from django.views.generic import DetailView, ListView
 from .models import Item
 from django.contrib import messages
 from django.contrib.auth.models import User, auth
 from django.contrib.auth.mixins import LoginRequiredMixin
+# from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 app_name = 'core'
 
@@ -19,12 +20,42 @@ def about(request):
 
 
 # view for product categories
-def category(request):
-    context = {
-        'animals': Item.objects.filter(category='A'),
-        'crops': Item.objects.filter(category='C')
-    }
-    return render(request, 'core/category.html', context)
+class CategoryView(ListView):
+    model = Item
+    context_object_name = 'items'
+    template_name = 'core/category.html'
+    # paginate_by = 1
+
+    def get_queryset(self):
+        queryset = {
+            'animals': Item.objects.all().filter(category='A'),
+            'crops': Item.objects.all().filter(category='C')
+        }
+        return queryset
+
+# def category(request):
+#     queryset_list = {
+#                 'animals': Item.objects.filter(category='A'),
+#                 'crops': Item.objects.filter(category='C')
+#             }
+#     paginator = Paginator(queryset_list, 1)
+#
+#     page = request.GET.get('page')
+#     try:
+#         queryset = paginator.page(page)
+#     except PageNotAnInteger:
+#         # If page is not an integer deliver the first page
+#         queryset = paginator.page(1)
+#     except EmptyPage:
+#         # If page is out of range deliver last page of results
+#         queryset = paginator.page(paginator.num_pages)
+#
+#     context = {
+#         'object': queryset,
+#         'title':  'List'
+#     }
+#
+#     return render(request, 'core/category.html', context)
 
 
 # view for single product page
@@ -99,7 +130,7 @@ def signupPage(request):
 # view for logout
 def logoutPage(request):
     auth.logout(request)
-    return redirect('core:login')
+    return redirect('account_login')
 
 
 # def password_reset(request):
