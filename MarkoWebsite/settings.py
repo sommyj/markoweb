@@ -29,7 +29,7 @@ SECRET_KEY = 'jh8*ld%e#r+(gr5qv8ykq=^!x&-#rhmt$gc(vywxa*ca)=!^i0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://markoventures.com', 'markoweb.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['https://markoventures.com', 'www.markoventures.com', 'markoweb.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
