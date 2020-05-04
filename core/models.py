@@ -20,7 +20,6 @@ class Item(models.Model):
     date_created = models.DateTimeField(auto_now_add=True)
     slug = models.SlugField()
 
-
     def __str__(self):
         return f"{self.title}==================================>>>{self.date_created}"
 

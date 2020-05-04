@@ -167,7 +167,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'danielonyeka247@gmail.com'
-EMAIL_HOST_PASSWORD = 'danielsung2478?@'
+EMAIL_HOST_PASSWORD = '12345abcd?@'
 
 
 LOGIN_REDIRECT_URL = '/'
