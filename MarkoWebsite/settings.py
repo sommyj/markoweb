@@ -24,11 +24,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'jh8*ld%e#r+(gr5qv8ykq=^!x&-#rhmt$gc(vywxa*ca)=!^i0'
-
+# SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
+DEBUG = (os.environ.get('DEBUG_VALUE', '') != 'False')
 
 ALLOWED_HOSTS = ['https://markoventures.com', 'www.markoventures.com', 'markoweb.herokuapp.com', '127.0.0.1']
 
@@ -162,15 +162,19 @@ STATICFILES_DIRS = (
 #  Add configuration for static files storage using whitenoise
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+#
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'danielsung247@gmail.com'
+EMAIL_HOST_PASSWORD = 'danielsung2478'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'danielonyeka247@gmail.com'
-EMAIL_HOST_PASSWORD = '12345abcd?@'
 
 
 LOGIN_REDIRECT_URL = '/'
+
 LOGOUT_REDIRECT_URL = 'account_login'
 
 SITE_ID = 1
