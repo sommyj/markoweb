@@ -37,7 +37,7 @@
                     </p>
 
 
-                    <a href="#" class="btn--text">learn more &rarr;</a>
+                    <a href="{% url 'core:about' %}" class="btn--text">learn more &rarr;</a>
                 </div>
 
               <div class="row">
@@ -95,7 +95,9 @@
 
                             <div class="card__details">
                                <p>
-                                Cash crops are an essential part of sustainable intensification as income generated with cash crops provides farm households with means to save and invest in a more productive farm, and cash crops may have a catalytic effect on agricultural innovations as they add value and productivity in rural areas.
+                                 Oil Palm: Oil palm is a  high sort after cash crop whose economic value can never be over emphasized because every part of the plant can  be / is used for something therefore making it all valuable.
+                                 At Marko Agro , With the facilities, state of art equipments and specialised human resources, we involve in the cultivation and processing of the palm fruits to get the best quality palm oil.
+
                               </p>
                               </div>
                         </div>
@@ -110,13 +112,12 @@
                             </div>
 
                             <h4 class="card__heading">
-                                <span class="card__heading-span--3">Poultry Farming</span>
+                                <span class="card__heading-span--3">Food Crop</span>
                                 </h4>
 
                             <div class="card__details">
                                <p>
-                                 Generally poultry farm  are establish for the purpose of producing eggs, meat and generating high revenue from these products.
-                                 Around, billions of chickens are raised throughout the world as a good source of food from their eggs and meat.
+                                Rice is a staple food and also cash crops that every household and a good number of industries demand demand and consume regularly and in high quantity and volumes. Marko Agro Ventures is presently involved in the processing, packaging and supply of the highest quality premium rice grains, rich in fibre and bran.
                                </p>
 
                             </div>
@@ -147,16 +148,9 @@
                     </div>
                  </div>
             </div>
-            {% if request.user.is_authenticated %}
             <div class="u-center-text ">
                 <a href="{% url 'core:category' %}" class="btn btn--green btn--cta btn--animated">Discover More</a>
             </div>
-            {% else %}
-            <div class="u-center-text ">
-                <a href="{% url 'core:login' %}" class="btn btn--green btn--cta btn--animated">Discover More</a>
-            </div>
-            {% endif %}
-
         </section>
     </main>
     {% include 'core/footer.html'%}

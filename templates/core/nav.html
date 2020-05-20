@@ -1,17 +1,14 @@
 <div class="background">
    <div class="background__place-center">
         <ul class="background__list">
-          {% if request.user.is_authenticated %}
-            <li class="background__item"><a href="{% url 'core:about' %}" class="background__link">About Marko</a></li>
+            <li class="background__item"><a href="{% url 'core:business' %}" class="background__link">Our Business</a></li>
             <li class="background__item"><a href="{% url 'core:contact' %}" class="background__link">Contact us</a></li>
-            <li class="background__item"><a href="{% url 'core:category' %}" class="background__link">Products</a></li>
-            <li class="background__item"><a href="{% url 'core:logout' %}" class="background__link" id="sign_up">Logout</a></li>
-            {% else %}
-            <li class="background__item"><a href="{% url 'core:about' %}" class="background__link">About Marko</a></li>
-            <li class="background__item"><a href="{% url 'core:contact' %}" class="background__link">Contact us</a></li>
-            <li class="background__item"><a href="{% url 'account_signup' %}" class="background__link" id="sign_up">Sign up</a></li>
-            <li class="background__item"><a href="{% url 'account_login' %}" class="background__link" id="sign_up">Login</a></li>
-            {% endif %}
+            <li class="background__item"><a href="{% url 'core:category' %}" class="background__link">Products</a>
+              <div class="">
+                <a class="" href="#">Action</a>
+                <a class="" href="#">Another action</a>
+              </div>
+            </li>
         </ul>
    </div>
 </div>
@@ -24,18 +21,9 @@
 
     <nav class="navigation__nav">
         <ul class="navigation__list">
-          {% if request.user.is_authenticated %}
-            <li class="navigation__item"><a href="{% url 'core:about' %}" class="navigation__link">About Marko</a></li>
+            <li class="navigation__item"><a href="{% url 'core:business' %}" class="navigation__link">Our Business</a></li>
             <li class="navigation__item"><a href="{% url 'core:category' %}" class="navigation__link">Products</a></li>
             <li class="navigation__item"><a href="{% url 'core:contact' %}" class="navigation__link">Contact us</a></li>
-            <li class="navigation__item"><a href="{% url 'core:logout' %}" class="navigation__link" id="sign_up">Logout</a></li>
-            <li class="navigation__item"><span class="navigation__link">Hello, {{request.user}}</span></li>
-          {% else %}
-          <li class="navigation__item"><a href="{% url 'core:about' %}" class="navigation__link">About Marko</a></li>
-          <li class="navigation__item"><a href="{% url 'core:contact' %}" class="navigation__link">Contact us</a></li>
-            <li class="navigation__item"><a href="{% url 'account_signup' %}" class="navigation__link" id="sign_up">Sign up</a></li>
-            <li class="navigation__item"><a href="{% url 'account_login' %}" class="navigation__link" id="sign_up">Login</a></li>
-          {% endif %}
         </ul>
     </nav>
 
