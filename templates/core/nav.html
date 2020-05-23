@@ -1,12 +1,14 @@
 <div class="background">
    <div class="background__place-center">
         <ul class="background__list">
-            <li class="background__item"><a href="{% url 'core:business' %}" class="background__link">Our Business</a></li>
+            <li class="background__item"><a href="{% url 'core:about' %}" class="background__link">About Us</a></li>
             <li class="background__item"><a href="{% url 'core:contact' %}" class="background__link">Contact us</a></li>
             <li class="background__item"><a href="{% url 'core:category' %}" class="background__link">Products</a>
-              <div class="">
-                <a class="" href="#">Action</a>
-                <a class="" href="#">Another action</a>
+              <div class="drop-down">
+                <ul>
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                </ul>
               </div>
             </li>
         </ul>
@@ -21,8 +23,15 @@
 
     <nav class="navigation__nav">
         <ul class="navigation__list">
-            <li class="navigation__item"><a href="{% url 'core:business' %}" class="navigation__link">Our Business</a></li>
-            <li class="navigation__item"><a href="{% url 'core:category' %}" class="navigation__link">Products</a></li>
+            <li class="navigation__item"><a href="{% url 'core:about' %}" class="navigation__link">About Us</a></li>
+            <li class="navigation__item"><a href="{% url 'core:category' %}" class="navigation__link">Products</a>
+              <div class="drop-down">
+                <ul>
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                </ul>
+              </div>
+            </li>
             <li class="navigation__item"><a href="{% url 'core:contact' %}" class="navigation__link">Contact us</a></li>
         </ul>
     </nav>
