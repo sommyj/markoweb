@@ -1187,15 +1187,6 @@ body {
 
 }
 
-/* .navigation__item .drop-down{
-  display: block;
-  position: absolute;
-  background: green;
-  margin-top: 15px;
-  margin-left: -15px;
-} */
-
-
 .background__link:link, .background__link:visited {
   display: inline-block;
   font-size: 3rem;
